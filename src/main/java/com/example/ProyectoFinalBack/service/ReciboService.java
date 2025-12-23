@@ -25,7 +25,7 @@ public class ReciboService {
     private GoogleAuthService authService; // Necesario para validar el código 2FA
 
     // ==========================================
-    // 🔹 Generar Recibo (Tu método original)
+    // 🔹 Generar Recibo (Tu metodo original)
     // ==========================================
     public Recibo generarRecibo(BigDecimal monto) {
         // 1. Consultar cuál es el último número usado
