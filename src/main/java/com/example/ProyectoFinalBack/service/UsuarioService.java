@@ -27,14 +27,10 @@ public class UsuarioService {
         return usuarioRepository.findByLogiUsua(logiUsua).orElse(null);
     }
 
+
     // =========================================================
     // 🔸 NUEVOS MÉTODOS PARA OAUTH 2.0
     // =========================================================
-
-    // Buscar usuario por proveedor e ID del proveedor OAuth
-//    public Usuario buscarPorOAuth(String provider, String oauthId) {
-//        return usuarioRepository.findByOauthProviderAndOauthId(provider, oauthId).orElse(null);
-//    }
 
     // Registrar o actualizar usuario proveniente de OAuth
     public Usuario registrarOAuthUsuario(String provider, String oauthId, String email,
