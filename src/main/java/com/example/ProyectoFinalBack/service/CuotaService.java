@@ -48,7 +48,7 @@ public class CuotaService {
     }
 
     // =======================================================
-    // 🔹 NUEVO MÉTODO: Generar cuotas automáticamente
+    // 🔹 NUEVO METODO: Generar cuotas automáticamente
     // =======================================================
     public void generarCuotasParaMatricula(Matricula matricula) {
         List<Concepto> conceptos = conceptoRepo.findAll();
