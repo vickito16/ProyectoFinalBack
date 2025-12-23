@@ -21,8 +21,4 @@ public class GradoService {
         return repo.findById(id).orElse(null);
     }
 
-    public Grado registrar(Grado g) {
-        return repo.save(g);
-    }
-
 }
