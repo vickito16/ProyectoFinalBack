@@ -26,11 +26,6 @@ public class CuotaService {
         return repo.findByMatricula_IdMatricula(idMatricula);
     }
 
-    // Metodo para guardar una lista masiva de cuotas
-    public List<Cuota> guardarLote(List<Cuota> cuotas) {
-        return repo.saveAll(cuotas);
-    }
-
     // --- AGREGAR ESTOS MÉTODOS ---
 
     // 1. Buscar una cuota individual para poder pagarla
