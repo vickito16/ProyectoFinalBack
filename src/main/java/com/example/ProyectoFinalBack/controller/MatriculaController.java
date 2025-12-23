@@ -67,62 +67,6 @@ public class MatriculaController {
     }
 
     // =========================================
-    // 🔍 MÉTODOS DE BÚSQUEDA
-    // =========================================
-
-    @GetMapping("/buscar/dni/{dni}")
-    public List<infoMatriculaDTO> buscarPorDni(@RequestHeader("Authorization") String header,
-                                               @PathVariable String dni) {
-        validarTokenOThrow(header);
-        List<Matricula> listaEntidades = matriculaService.buscarPorDni(dni);
-        return listaEntidades.stream()
-                .map(infoMatriculaDTO::new)
-                .collect(Collectors.toList());
-    }
-
-    @GetMapping("/buscar/anio/{anio}")
-    public List<infoMatriculaDTO> buscarPorAnio(@RequestHeader("Authorization") String header,
-                                                @PathVariable String anio) {
-        validarTokenOThrow(header);
-        List<Matricula> listaEntidades = matriculaService.listarPorAnio(anio);
-        return listaEntidades.stream()
-                .map(infoMatriculaDTO::new)
-                .collect(Collectors.toList());
-    }
-
-    @GetMapping("/buscar/grado/{idGrado}")
-    public List<infoMatriculaDTO> buscarPorGrado(@RequestHeader("Authorization") String header,
-                                                 @PathVariable Integer idGrado) {
-        validarTokenOThrow(header);
-        List<Matricula> listaEntidades = matriculaService.listarPorGrado(idGrado);
-        return listaEntidades.stream()
-                .map(infoMatriculaDTO::new)
-                .collect(Collectors.toList());
-    }
-
-    @GetMapping("/filtrar")
-    public List<infoMatriculaDTO> filtrar(@RequestHeader("Authorization") String header,
-                                          @RequestParam(required = false) String anio,
-                                          @RequestParam(required = false) Integer grado) {
-        validarTokenOThrow(header);
-        List<Matricula> resultadoEntidades;
-
-        if (anio != null && grado != null) {
-            resultadoEntidades = matriculaService.filtrarPorAnioYGrado(anio, grado);
-        } else if (anio != null) {
-            resultadoEntidades = matriculaService.listarPorAnio(anio);
-        } else if (grado != null) {
-            resultadoEntidades = matriculaService.listarPorGrado(grado);
-        } else {
-            return new ArrayList<>();
-        }
-
-        return resultadoEntidades.stream()
-                .map(infoMatriculaDTO::new)
-                .collect(Collectors.toList());
-    }
-
-    // =========================================
     // 📝 Registrar Matrícula
     // =========================================
     @PostMapping("/registrar")
