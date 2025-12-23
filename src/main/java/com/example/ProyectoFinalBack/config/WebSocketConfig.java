@@ -20,6 +20,6 @@ public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry){
         // Permitimos origen * para evitar problemas de CORS en desarrollo
-        registry.addEndpoint("/chat-websocket").setAllowedOriginPatterns("*").withSockJS();
+        registry.addEndpoint("/chat-websocket").setAllowedOriginPatterns("*");
     }
 }
