@@ -45,14 +45,4 @@ public class GradoController {
         return ResponseEntity.ok(gradoService.listar());
     }
 
-    // =========================================
-    // 🔹 Registrar Grado (Opcional, si quieres crear nuevos grados desde Postman)
-    // =========================================
-    @PostMapping("/registrar")
-    public ResponseEntity<?> registrar(@RequestHeader("Authorization") String header, @RequestBody Grado grado) {
-        if (!validarToken(header)) {
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Token inválido");
-        }
-        return ResponseEntity.ok(gradoService.registrar(grado));
-    }
 }
