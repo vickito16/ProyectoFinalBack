@@ -25,8 +25,4 @@ public class GradoService {
         return repo.save(g);
     }
 
-    // Método para eliminar (opcional, por si quieres gestionar grados desde el sistema)
-    public void eliminar(Integer id) {
-        repo.deleteById(id);
-    }
 }
